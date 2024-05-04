@@ -2,10 +2,13 @@ import React from "react";
 import { Button, Checkbox, Form, Input, InputNumber } from "antd";
 import TextArea from "antd/es/input/TextArea";
 
-const AntdForm = () => {
+const AntdForm = ({setIsTrue}) => {
   const onFinish = (values) => {
     console.log("Success:", values);
-    
+    if (values) {
+      setIsTrue(false)
+    }
+
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
@@ -21,6 +24,7 @@ const AntdForm = () => {
         style={{
           width:"100%",
         }}
+        initialValues={{remember: true,}}
         
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
