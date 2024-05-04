@@ -5,19 +5,18 @@ import TextArea from "antd/es/input/TextArea";
 const AntdForm = () => {
   const onFinish = (values) => {
     console.log("Success:", values);
+    
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
   return (
-    <div className="border w-full flex ">
+    <div className="w-full p-4">
       <Form className="flex flex-wrap"
         name="basic"
-        // labelCol={{
-        //   span: 8,
-        // }}
+        
         wrapperCol={{
-          span: 20,
+          span: 25,
         }}
         style={{
           width:"100%",
@@ -29,6 +28,8 @@ const AntdForm = () => {
       >
         <Form.Item
           name="username"
+          
+          style={{width: "50%",}}
           rules={[
             {
               required: true,
@@ -36,10 +37,14 @@ const AntdForm = () => {
             },
           ]}
         >
-          <Input />
+          <Input style={{height:"40px"}} placeholder="Username"/>
         </Form.Item>
         <Form.Item
           name="email"
+          wrapperCol={{
+            offset:1
+          }}
+          style={{width: "50%",}}
           rules={[
             {
               required: true,
@@ -47,10 +52,11 @@ const AntdForm = () => {
             },
           ]}
         >
-          <Input />
+          <Input style={{height:"40px"}}  placeholder="Email"/>
         </Form.Item>
         <Form.Item
           name="phone"
+          style={{width:"50%"}}
           rules={[
             {
               required: true,
@@ -58,10 +64,12 @@ const AntdForm = () => {
             },
           ]}
         >
-          <InputNumber />
+          <InputNumber style={{width:"100%",height:"40px"}} placeholder="Phone"/>
         </Form.Item>
         <Form.Item
           name="subject"
+          wrapperCol={{offset:1}}
+          style={{width:"50%"}}
           rules={[
             {
               required: true,
@@ -69,27 +77,26 @@ const AntdForm = () => {
             },
           ]}
         >
-          <Input />
+          <Input style={{height:"40px"}} placeholder="Subject"/>
         </Form.Item>
         <Form.Item
           name="textarea"
+          style={{width:"100%"}}
           rules={[
             {
               required: true,
-              message: "Please input your password!",
+              message: "Enter description!",
             },
           ]}
         >
-          <TextArea rows={4} />
+          <TextArea rows={7} placeholder="Description"/>
         </Form.Item>
 
         <Form.Item
-          wrapperCol={{
-            offset: 8,
-            span: 16,
-          }}
+        style={{width:"100%"}}
+         
         >
-          <Button type="primary" htmlType="submit">
+          <Button className="bg-[#0AB5D3] text-white" htmlType="submit">
             Submit
           </Button>
         </Form.Item>

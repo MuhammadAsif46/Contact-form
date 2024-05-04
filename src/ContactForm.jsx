@@ -4,7 +4,7 @@ import AntdForm from "./AntdForm";
 
 const ContactForm = () => {
   return (
-    <div className="row g-0 mx-10" style={{ height: "90vh" }}>
+    <div className="row g-0 w-10/12 mx-auto" style={{ height: "90vh" }}>
       <div className="col-6 bg-[#0AB5D3] flex gap-6 flex-col justify-center items-center text-white" >
         {/* <img src={image} alt="contact-image" style={{width:"100%",height:"100%",objectFit:"cover"}}/> */}
         <h1 className="text-5xl font-bold">Let`s Chat</h1>
